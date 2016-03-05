@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="db0f057e-400e-4417-aeff-5cacc10a7c67" name="app.abletive.com" url="http://app.abletive.com">
-        <fileTransfer host="app.abletive.com" port="22" accessType="SFTP" username="root">
+        <fileTransfer host="app.abletive.com" port="22" accessType="SFTP" password="dfe9dfcbdfd9dfdedfc6dfcfdf9bdf98df99df87" username="root">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
