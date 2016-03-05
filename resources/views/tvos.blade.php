@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Abletive :: tvOS客户端</title>
     <link rel="stylesheet" href="{{ url('css/tvos-app.css') }}">
-
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="icon" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
 </head>
 <body>
     <div class="wrapper" id="main">
@@ -18,7 +20,7 @@
                 <div class="container">
                     <div class="row text-center" id="banner-callout">
                         <h1>Abletive Apple TV客户端</h1>
-                        <h3>Abletive音乐社区的官方教学视频网站tvOS App</h3>
+                        <h3>Abletive音乐社区的官方 <a href="http://v.abletive.com" target="_blank" style="text-decoration: none; color: #ee2; margin-left: -6px;">教学视频网站</a>tvOS App</h3>
                         <p>访问Apple TV的App Store下载此应用</p>
                         <p style="display: inline-block;"><span class="app-store-badge"></span></p>
                     </div>
