@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<audio id="intro-audio" src="{{ url('audio/intro.wav') }}" preload="true" loop></audio>
+{{--<audio id="intro-audio" src="{{ url('audio/intro.wav') }}" preload="true" loop></audio>--}}
 <!-- Scripts -->
 <script src="{{ elixir('js/ios-main.js') }}"></script>
 </body>
