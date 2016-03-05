@@ -30,4 +30,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/ios', 'MainController@showiOS');
     Route::get('/tvos', 'MainController@showtvOS');
     Route::get('/ios/version', 'MainController@getiOSVersionInfo');
+
 });

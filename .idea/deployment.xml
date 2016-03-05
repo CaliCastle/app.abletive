@@ -5,7 +5,7 @@
       <paths name="app.abletive.com">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/wwwroot/app.abletive.com" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/wwwroot/app.abletive.com/laravel" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
