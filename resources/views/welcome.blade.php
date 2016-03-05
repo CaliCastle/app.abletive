@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Abletive App</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link href="http://fonts.useso.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
             html, body {
@@ -31,14 +31,35 @@
             }
 
             .title {
-                font-size: 96px;
+                font-size: 5em;
+                margin-bottom: 20px;
+            }
+
+            .buttons {
+                padding: 5px;
+            }
+
+            .buttons a {
+                color: #fff;
+                background-color: rgb(42,42,42);
+                padding: 10px 25px;
+                font-size: 2.5em;
+                text-decoration: none;
+                margin: 30px 10px;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                border-radius: 8px;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Abletive App</div>
+                <div class="buttons">
+                    <a href="/ios">iOS</a>
+                    <a href="/tvos">tvOS</a>
+                </div>
             </div>
         </div>
     </body>

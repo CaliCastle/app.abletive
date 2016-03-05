@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="app.abletive.com" uploadOnCheckin="db0f057e-400e-4417-aeff-5cacc10a7c67">
+    <serverData>
+      <paths name="app.abletive.com">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/wwwroot/app.abletive.com" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="app.abletive.com" />
+  </component>
+</project>

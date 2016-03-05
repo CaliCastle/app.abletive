@@ -1,0 +1,187 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "mixins";
+
+body {
+  font-family: 'Microsoft Yahei','微软雅黑','PingFang SC','Helvetica Neue',sans-serif;
+  background: #fff;
+  //min-width: 1220px;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+}
+
+.banner {
+  -webkit-background-size: cover;
+  background-size: cover;
+  @include boxshadow(0 0 5px);
+
+  #banner-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h1,h2,h3,h4,h5,h6,p {
+    color: #fff;
+    font-weight: 300;
+  }
+
+  h1 {
+    font-size: 3.2em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  #banner-callout {
+    margin-top: -45px;
+    padding: 50px;
+    line-height: 2.5em;
+  }
+
+  .app-store-badge {
+    display: block;
+    background: url("../images/app_store_badge.svg") 0% 0% no-repeat;
+    width: 135px;
+    height: 40px;
+    margin: 10px;
+  }
+}
+
+#screens {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: aliceblue;
+  padding-bottom: 20px;
+
+  .row {
+    z-index: 1;
+    position: relative;
+    
+    &:before,&:after {
+      content: ' ';
+      display: table;
+    }
+  }
+
+  .feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    figure, aside{
+      flex: 1;
+      position: relative;
+    }
+
+    .screen {
+      width: 100%;
+      -webkit-background-size: 100% auto !important;
+      background-size: 100% auto !important;
+      min-height: 2px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+      @include boxshadow(0 0 10px rgba(0,0,0,0.25));
+
+      &:before {
+        content: ' ';
+        display: block;
+        padding-bottom: 56.23%;
+      }
+    }
+  }
+
+  .description {
+    h2 {
+      font-weight: 300;
+      margin-bottom: 25px;
+    }
+
+    p {
+      color: #777;
+      font-size: 1.2em;
+    }
+  }
+
+  .big-center {
+    padding-bottom: 10px;
+
+    + .description {
+      padding: 50px 0;
+    }
+  }
+}
+
+.app-icon {
+  position: relative;
+  width: 400px;
+  height: 240px;
+  margin-left: -200px;
+  left: 50%;
+  top: 10px;
+
+  .layers {
+    width: 400px;
+    height: 240px;
+    position: relative;
+    transform-style: preserve-3d;
+
+    @for $i from 1 through 4 {
+      .layer:nth-of-type(#{$i}) {
+        background: url("../images/tvos/app-layer-#{$i}.png") no-repeat center top;
+        z-index: #{$i};
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @if($i == 1)
+        {
+          @include br(12px);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  margin: 50px 0;
+  padding: 10px;
+
+  .copyright {
+    text-align: center;
+
+    p {
+      font-size: 1.35em;
+      font-weight: 200;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  #screens {
+    .feature {
+      display: block !important;
+      padding: 25px;
+    }
+
+    figure, aside {
+      width: 100% !important;
+      margin: 45px 0;
+    }
+  }
+}

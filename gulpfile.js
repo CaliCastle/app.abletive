@@ -14,6 +14,8 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.sass('ios-app.scss').scripts(['jquery.min.js','ios-main.js'], 'public/js/ios-main.js');
 
+    mix.sass('tvos-app.scss').scripts(['jquery.min.js'], 'public/js/tvos-main.js');
+
     mix.version([
         'css/ios-app.css',
         'js/ios-main.js'
