@@ -10,7 +10,7 @@ $(function () {
         $stage.removeClass('smash').addClass('reset');
     });
 
-    $('#intro-audio')[0].play();
+    //$('#intro-audio')[0].play();
     setTimeout(function () {
         $stage.addClass('stage-1 smash');
     }, 150);
