@@ -1,473 +1,1419 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "mixins";
 
-$polygonts: cubic-bezier(0.7, 0.3, 0, 1);
+*, *:focus {
+  outline: none;
+}
 
-.main {
-  width: 100%;
-  position: relative;
-  height: 100%;
-  //background-color: #1a1a1d;
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+//$polygonts: cubic-bezier(0.7, 0.3, 0, 1);
+//
+//.main {
+//  width: 100%;
+//  position: relative;
+//  height: 100%;
+//  //background-color: #1a1a1d;
+//
+//  .logo-canvas {
+//    width: 570px;
+//    height: 600px;
+//    position: absolute;
+//    left: 50%;
+//    margin-left: -285px;
+//    top: 50%;
+//    margin-top: 285px;
+//    @include ts(5555s);
+//    -webkit-transform: rotate(0deg) scale3d(1,1,1);
+//    -moz-transform: rotate(0deg) scale3d(1,1,1);
+//    -ms-transform: rotate(0deg) scale3d(1,1,1);
+//    -o-transform: rotate(0deg) scale3d(1,1,1);
+//    transform: rotate(0deg) scale3d(1,1,1);
+//
+//    .shard-wrap {
+//      width: 100%;
+//      height: 100%;
+//      z-index: 2;
+//      position: absolute;
+//      @include ts(.8s);
+//
+//      .shard {
+//        width: 100%;
+//        height: 100%;
+//        @include ts(.8s);
+//
+//        &:before {
+//          content: '';
+//          width: 100%;
+//          height: 100%;
+//          position: absolute;
+//          background-color: rgba(255,255,255,0);
+//          top: 0;
+//          left: 0;
+//        }
+//      }
+//
+//      //&:first-of-type .shard {
+//      //  -webkit-clip-path: polygon(42% 0%, 78% 82%, 60% 68%);
+//      //  background-color: #111;
+//      //  @include ts(.5s cubic-bezier(0.7, 0.3, 0, 1));
+//      //}
+//      //
+//      //&:nth-of-type(2) .shard {
+//      //  -webkit-clip-path: polygon(41% 0.7%, 59% 66%, 32% 22%);
+//      //  background-color: #111;
+//      //  @include ts(.5s .12s cubic-bezier(0.7, 0.3, 0, 1));
+//      //}
+//      //
+//      //&:nth-of-type(3) .shard {
+//      //  -webkit-clip-path: polygon(34% 69%, 80% 88.5%, 22.3% 41.7%);
+//      //  background-color: #111;
+//      //  @include ts(.5s .24s cubic-bezier(0.7, 0.3, 0, 1));
+//      //}
+//      //&:nth-of-type(4) .shard {
+//      //  -webkit-clip-path: polygon(37.5% 71.1%, 81.5% 90%, 85% 100%);
+//      //  background-color: #111;
+//      //  @include ts(.5s .35s cubic-bezier(0.7, 0.3, 0, 1));
+//      //}
+//      //&:nth-of-type(5) .shard {
+//      //  -webkit-clip-path: polygon(21.5% 47.5%, 16% 89.5%, 0% 100%);
+//      //  background-color: #111;
+//      //  @include ts(.5s .45s cubic-bezier(0.7, 0.3, 0, 1));
+//      //}
+//      //&:nth-of-type(6) .shard {
+//      //  -webkit-clip-path: polygon(22.3% 47.5%, 30% 69%, 17% 88%);
+//      //  background-color: #111;
+//      //  @include ts(.5s .77s cubic-bezier(0.7, 0.3, 0, 1));
+//      //}
+//    }
+//  }
+//}
+//
+//.stage-1 {
+//  .shard-wrap {
+//    // First piece, top left
+//    &:first-of-type .shard {
+//      -webkit-clip-path: polygon(41% 0.7%, 36.5% 11%, 48% 25%);
+//      background-color: #111;
+//      @include ts(.5s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    &:nth-of-type(2) .shard {
+//      -webkit-clip-path: polygon(48% 25%, 36.5% 11%, 32% 22%);
+//      background-color: #111;
+//      @include ts(.5s .05s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    &:nth-of-type(3) .shard {
+//      -webkit-clip-path: polygon(32% 22%, 48% 25%, 51.85% 55%);
+//      background-color: #111;
+//      @include ts(.5s .11s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(4) .shard {
+//      -webkit-clip-path: polygon(48% 25%, 51.85% 55%, 59% 66%);
+//      background-color: #111;
+//      @include ts(.5s .17s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    // Second piece, top right
+//    &:nth-of-type(5) .shard {
+//      -webkit-clip-path: polygon(42% 0%, 66.35% 55.6%, 55% 48%);
+//      background-color: #111;
+//      @include ts(.5s .22s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(6) .shard {
+//      -webkit-clip-path: polygon(55% 48%, 60% 68%, 66.35% 55.6%);
+//      background-color: #111;
+//      @include ts(.5s .25s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(7) .shard {
+//      -webkit-clip-path: polygon(66.35% 55.6%, 60% 68%, 70.5% 65.25%);
+//      background-color: #111;
+//      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(8) .shard {
+//      -webkit-clip-path: polygon(60% 68%, 70.5% 65.25%, 78% 82%);
+//      background-color: #111;
+//      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    // Third piece, middle left
+//    &:nth-of-type(9) .shard {
+//      -webkit-clip-path: polygon(22.3% 41.7%, 35.8% 54%, 30% 60%);
+//      background-color: #111;
+//      @include ts(.5s .36s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(10) .shard {
+//      -webkit-clip-path: polygon(30% 60%, 35.8% 54%, 34% 69%);
+//      background-color: #111;
+//      @include ts(.5s .40s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(11) .shard {
+//      -webkit-clip-path: polygon(34% 69%, 54% 69%, 35.8% 54%);
+//      background-color: #111;
+//      @include ts(.5s .42s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(12) .shard {
+//      -webkit-clip-path: polygon(34% 69%, 54% 69%, 80% 88.5%);
+//      background-color: #111;
+//      @include ts(.5s .45s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    // Fourth piece, middle right
+//    &:nth-of-type(13) .shard {
+//      -webkit-clip-path: polygon(37.5% 71.1%, 65% 82.5%, 49% 78.5%);
+//      background-color: #111;
+//      @include ts(.5s .47s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(14) .shard {
+//      -webkit-clip-path: polygon(49% 78.5%, 65% 82.5%, 75% 94.5%);
+//      background-color: #111;
+//      @include ts(.5s .4s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(15) .shard {
+//      -webkit-clip-path: polygon(65% 82.5%, 75% 94.5%, 81.5% 90%);
+//      background-color: #111;
+//      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(16) .shard {
+//      -webkit-clip-path: polygon(75% 94.5%, 81.5% 90%, 85% 100%);
+//      background-color: #111;
+//      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    // Fifth piece, Bottom left
+//    &:nth-of-type(17) .shard {
+//      -webkit-clip-path: polygon(21.5% 47.5%, 19% 65%, 13.5% 68.8%);
+//      background-color: #111;
+//      @include ts(.5s .22s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(18) .shard {
+//      -webkit-clip-path: polygon(13.5% 68.8%, 19% 65%, 16% 89.5%);
+//      background-color: #111;
+//      @include ts(.5s .25s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(19) .shard {
+//      -webkit-clip-path: polygon(13.5% 68.8%, 16% 89.5%, 7% 84.5%);
+//      background-color: #111;
+//      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(20) .shard {
+//      -webkit-clip-path: polygon(0% 100%, 7% 84.5%, 16% 89.5%);
+//      background-color: #111;
+//      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    // Final piece, Bottom right
+//    &:nth-of-type(21) .shard {
+//      -webkit-clip-path: polygon(22.3% 47.5%, 30% 69%, 20% 65%);
+//      background-color: #111;
+//      @include ts(.5s .22s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(22) .shard {
+//      -webkit-clip-path: polygon(20% 65%, 30% 69%, 26% 75%);
+//      background-color: #111;
+//      @include ts(.5s .25s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(23) .shard {
+//      -webkit-clip-path: polygon(20% 65%, 26% 75%, 18.3% 79%);
+//      background-color: #111;
+//      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//    &:nth-of-type(24) .shard {
+//      -webkit-clip-path: polygon(18.3% 79%, 17% 88%, 26% 75%);
+//      background-color: #111;
+//      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
+//    }
+//
+//    @for $i from 1 through 24 {
+//      &:nth-of-type(#{$i}) .shard {
+//        @include ts(.45s $i * 0.018s cubic-bezier(0.7, 0.3, 0, 1));
+//
+//        &:before {
+//          -webkit-animation-delay: $i * 0.038s;
+//          -moz-animation-delay: $i * 0.038s;
+//          -o-animation-delay: $i * 0.038s;
+//          animation-delay: $i * 0.038s;
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//.intro {
+//  .logo-canvas {
+//    //-webkit-transform: rotate(36000deg);
+//    //-moz-transform: rotate(36000deg);
+//    //-ms-transform: rotate(36000deg);
+//    //-o-transform: rotate(36000deg);
+//    //transform: rotate(36000deg);
+//    .shard-wrap {
+//      &:first-of-type .shard {
+//        -webkit-clip-path: polygon(21.5% 70.5%, 12% 85.5%, 8% 80%) !important;
+//        background-color: #483448 !important;
+//      }
+//
+//      &:nth-of-type(2) .shard {
+//        -webkit-clip-path: polygon(22.8% 24.714%, 18.3% 27.714%, 13.6% 24%) !important;
+//        background-color: #e33 !important;
+//      }
+//
+//      &:nth-of-type(3) .shard {
+//        -webkit-clip-path: polygon(8.5% 55%, 8% 57.286%, 11.7% 55.429%) !important;
+//        background-color: greenyellow !important;
+//      }
+//      &:nth-of-type(4) .shard {
+//        -webkit-clip-path: polygon(65% 88%, 52.5% 87.5%, 46% 80%) !important;
+//        background-color: darkblue !important;
+//      }
+//      &:nth-of-type(5) .shard {
+//        -webkit-clip-path: polygon(48.5% 2.571%, 49.4% 5.571%, 50% 2.714%) !important;
+//        background-color: #eee !important;
+//      }
+//      &:nth-of-type(6) .shard {
+//        -webkit-clip-path: polygon(70.5% 11.429%, 71.3% 8.571%, 73.1% 9.571%) !important;
+//        background-color: #302035 !important;
+//      }
+//    }
+//  }
+//}
+//
+//.smash {
+//  .rotator {
+//    -webkit-transform: rotate(36000deg);
+//    -moz-transform: rotate(36000deg);
+//    -ms-transform: rotate(36000deg);
+//    -o-transform: rotate(36000deg);
+//    transform: rotate(36000deg);
+//  }
+//  .logo-canvas {
+//    -webkit-transform: scale3d(700,700,1);
+//    -moz-transform: scale3d(700,700,1);
+//    -ms-transform: scale3d(700,700,1);
+//    -o-transform: scale3d(700,700,1);
+//    transform: scale3d(700,700,1);
+//  }
+//  .shard-wrap {
+//
+//    &:nth-of-type(n) .shard {
+//      @include ts(.45s .0165s cubic-bezier(0.65, 0.2, 0.1, 1.05) !important);
+//    }
+//
+//      &:nth-child(1) {
+//        .shard {
+//          -webkit-clip-path: polygon( 23.200% 21.571% ,21.700% 17.714% ,20.200% 19.857% ) !important;
+//        }
+//      }
+//      &:nth-child(2) {
+//        .shard {
+//          -webkit-clip-path: polygon( 18.800% 25.714% ,16.300% 22.714% ,15.600% 24.000% ) !important;
+//        }
+//      }
+//      &:nth-child(3) {
+//        .shard {
+//          -webkit-clip-path: polygon(91% 60%, 87.5% 61.5%, 85% 60%) !important;
+//        }
+//      }
+//      &:nth-child(4) {
+//        .shard {
+//          -webkit-clip-path: polygon(10% 30%, 11% 32%, 12% 31%) !important;
+//        }
+//      }
+//      &:nth-child(5) {
+//        .shard {
+//          -webkit-clip-path: polygon(70% 90%, 71% 92%, 72% 91%) !important;
+//        }
+//      }
+//      &:nth-child(6) {
+//        .shard {
+//          -webkit-clip-path: polygon(80% 70%, 81% 73%, 82% 71%) !important;
+//        }
+//      }
+//      &:nth-child(7) {
+//        .shard {
+//          -webkit-clip-path: polygon( 8.500% 55.000% ,8.000% 57.286% ,11.700% 55.429% ) !important;
+//        }
+//      }
+//      &:nth-child(8) {
+//        .shard {
+//          -webkit-clip-path: polygon( 15.100% 63.857% ,15.500% 65.714% ,18.100% 63.857% ) !important;
+//        }
+//      }
+//      &:nth-child(9) {
+//        .shard {
+//          -webkit-clip-path: polygon( 18.800% 78.000% ,15.800% 79.143% ,17.300% 80.714% ) !important;
+//        }
+//      }
+//      &:nth-child(10) {
+//        .shard {
+//          -webkit-clip-path: polygon(85% 78%, 84.5% 80.5%, 86% 80%) !important;
+//        }
+//      }
+//      &:nth-child(11) {
+//        .shard {
+//          -webkit-clip-path: polygon( 39.300% 17.143% ,38.700% 13.000% ,36.900% 15.571% ) !important;
+//        }
+//      }
+//      &:nth-child(12) {
+//        .shard {
+//          -webkit-clip-path: polygon( 32.100% 82.000% ,34.100% 84.429% ,35.500% 79.714% ) !important;
+//        }
+//      }
+//      &:nth-child(13) {
+//        .shard {
+//          -webkit-clip-path: polygon( 48.500% 2.571% ,49.400% 5.571% ,50.000% 2.714% ) !important;
+//        }
+//      }
+//      &:nth-child(14) {
+//        .shard {
+//          -webkit-clip-path: polygon(50% 93%, 51% 95%, 52% 94%) !important;
+//        }
+//      }
+//      &:nth-child(15) {
+//        .shard {
+//          -webkit-clip-path: polygon( 60.300% 8.000% ,62.300% 5.571% ,60.900% 3.857% ) !important;
+//        }
+//      }
+//      &:nth-child(16) {
+//        .shard {
+//          -webkit-clip-path: polygon( 59.900% 92.714% ,60.400% 98.286% ,63.600% 96.714% ) !important;
+//        }
+//      }
+//      &:nth-child(17) {
+//        .shard {
+//          -webkit-clip-path: polygon( 70.500% 11.429% ,71.300% 8.571% ,73.100% 9.571% ) !important;
+//        }
+//      }
+//      &:nth-child(18) {
+//        .shard {
+//          -webkit-clip-path: polygon( 18.500% 42.286% ,15.200% 40.286% ,15.900% 42.857% ) !important;
+//        }
+//      }
+//      &:nth-child(19) {
+//        .shard {
+//          -webkit-clip-path: polygon( 73.500% 16.857% ,76.300% 14.857% ,74.400% 12.429% ) !important;
+//        }
+//      }
+//      &:nth-child(20) {
+//        .shard {
+//          -webkit-clip-path: polygon(80% 90%, 81% 92%, 82% 91%) !important;
+//        }
+//      }
+//
+//      &:nth-child(21) {
+//        .shard {
+//          -webkit-clip-path: polygon( 73.300% 28.429% ,75.500% 26.714% ,74.800% 25.857% ) !important;
+//        }
+//      }
+//      &:nth-child(22) {
+//        .shard {
+//          -webkit-clip-path: polygon(85% 25%, 86% 27%, 87% 26%) !important;
+//        }
+//      }
+//
+//      &:nth-child(23) {
+//        .shard {
+//          -webkit-clip-path: polygon( 79.600% 33.571% ,82.800% 32.714% ,81.800% 30.000% ) !important;
+//        }
+//      }
+//      &:nth-child(24) {
+//        .shard {
+//          -webkit-clip-path: polygon( 86.900% 42.643% ,90.500% 42.929% ,89.800% 39.786% ) !important;
+//        }
+//      }
+//      &:nth-child(25) {
+//        .shard {
+//          -webkit-clip-path: polygon(80% 50%, 80.5% 50.5%, 81% 50%) !important;
+//        }
+//      }
+//      &:nth-child(26) {
+//        .shard {
+//          -webkit-clip-path: polygon(84.5% 60%, 83% 62%, 81% 61%) !important;
+//        }
+//      }
+//      &:nth-child(27) {
+//        .shard {
+//          -webkit-clip-path: polygon( 84.100% 67.857% ,85.500% 68.714% ,85.300% 67.286% ) !important;
+//        }
+//      }
+//      &:nth-child(28) {
+//        .shard {
+//          -webkit-clip-path: polygon(80% 70%, 81% 73%, 82% 71%) !important;
+//        }
+//      }
+//      &:nth-child(29) {
+//        .shard {
+//          -webkit-clip-path: polygon(85% 80%, 85.5% 80.5%, 86% 80%) !important;
+//        }
+//      }
+//      &:nth-child(30) {
+//        .shard {
+//          -webkit-clip-path: polygon( 76.600% 81.214% ,78.000% 84.786% ,78.400% 83.500% ) !important;
+//        }
+//      }
+//  }
+//}
+//
+//.reset {
+//  .logo-canvas {
+//    @include ts(all ease-in-out .2s);
+//  }
+//}
+//
+//.shimmer {
+//  .shard:before {
+//    @include animation(0.98s 0.17s shimmer forwards);
+//  }
+//}
+//
+//@keyframes shimmer {
+//  0% {
+//    background-color: rgba(255,255,255,0);
+//  }
+//  35% {
+//    background-color: rgba(255,255,255,.1);
+//  }
+//  100% {
+//    background-color: rgba(255,255,255,0);
+//  }
+//}
 
-  .logo-canvas {
-    width: 570px;
-    height: 600px;
-    position: absolute;
-    left: 50%;
-    margin-left: -285px;
-    top: 50%;
-    margin-top: 285px;
-    @include ts(5555s);
-    -webkit-transform: rotate(0deg) scale3d(1,1,1);
-    -moz-transform: rotate(0deg) scale3d(1,1,1);
-    -ms-transform: rotate(0deg) scale3d(1,1,1);
-    -o-transform: rotate(0deg) scale3d(1,1,1);
-    transform: rotate(0deg) scale3d(1,1,1);
+body {
+  font-family: 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+  background: rgb(49,49,49);
+  color: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+  overflow-x: hidden;
+}
 
-    .shard-wrap {
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      position: absolute;
-      @include ts(.8s);
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-      .shard {
+  .wrapper {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-width: 1850px;
+    overflow: hidden;
+
+    .section {
+      padding: 0;
+      clear: both;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 3.2em;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+    }
+    h2 {
+      font-weight: 300;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    h3 {
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    figure {
+      background-size: 100% auto !important;
+      min-height: 2px;
+    }
+
+    // Banner: Section 1
+    #banner {
+      z-index: 3;
+      text-align: center;
+      position: relative;
+      color: #fff;
+
+      .fancy-bg {
         width: 100%;
-        height: 100%;
-        @include ts(.8s);
-        
+        min-height: 2px;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 4;
+        background: url("../../images/ios/TopBannerBG.png") no-repeat center top;
+
         &:before {
-          content: '';
-          width: 100%;
-          height: 100%;
+          content: ' ';
+          display: block;
+          padding-bottom: percentage(670/1100);
+        }
+      }
+
+      .hero-heading {
+        font-size: 6.2em;
+        font-weight: lighter;
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: .5em;
+        left: 0;
+        z-index: 4;
+      }
+
+      .heading-caption {
+        font-size: 5.5em;
+        font-weight: 400;
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 2em;
+        left: 0;
+        z-index: 4;
+      }
+
+      .iPhone-wrapper {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .iPhone-inside {
+        position: relative;
+        max-width: 160px;
+        bottom: 120px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 4;
+
+        > img:first-of-type {
+          max-width: 75%;
+          margin-bottom: 15px;
+        }
+
+        > img:last-of-type {
+          max-width: 99%;
+        }
+      }
+
+      &.entered {
+        .hero-heading {
+          @include am(fadeInUp .6s .2s backwards);
+        }
+
+        .heading-caption {
+          @include am(fadeInUp .7s .45s backwards);
+        }
+
+        .iPhone-inside {
+          img:nth-of-type(1) {
+            @include am(fadeInDown .6s .75s backwards);
+          }
+          img:last-of-type {
+            @include am(fadeInUp .5s .85s backwards);
+          }
+        }
+      }
+    }
+
+    // Be Updated: Section 2
+    #be-updated {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .hand-hold-iphone {
+        flex: 1;
+        background: url("../../images/ios/Section1HandDevice.png") no-repeat center top;
+        opacity: 0;
+
+        &:before {
+          content: ' ';
+          display: block;
+          padding-bottom: calc(#{percentage(720/637)} - 1%);
+        }
+      }
+
+      aside {
+        flex: 1;
+        padding: 35px;
+        opacity: 0;
+      }
+
+      &.entered {
+        .hand-hold-iphone {
+          opacity: 1;
+          @include am(fadeInUp .7s .12s backwards);
+        }
+
+        aside {
+          opacity: 1;
+          @include am(fadeInDown .67s .45s backwards);
+        }
+      }
+    }
+
+    // Enjoy Anywhere: Section 3
+    #enjoy-anywhere {
+      text-align: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      z-index: 4;
+      margin-bottom: 200px;
+
+      .hand-hold-device {
+        width: 100%;
+        top: -50px;
+        left: 0;
+        position: absolute;
+        background: url("../../images/ios/Section2HandDevice.png") no-repeat center top;
+
+        &:before {
+          content: ' ';
+          display: block;
+          padding-bottom: percentage(670/1100);
+        }
+
+        &:after {
+          content: ' ';
+          display: block;
+          background-color: #313131;
           position: absolute;
-          background-color: rgba(255,255,255,0);
-          top: 0;
-          left: 0;
+          left: -5%;
+          top: 6em;
+          width: 110%;
+          height: 100px;
+          transform: rotate(6deg);
+          z-index: -1;
         }
       }
 
-      //&:first-of-type .shard {
-      //  -webkit-clip-path: polygon(42% 0%, 78% 82%, 60% 68%);
-      //  background-color: #111;
-      //  @include ts(.5s cubic-bezier(0.7, 0.3, 0, 1));
-      //}
-      //
-      //&:nth-of-type(2) .shard {
-      //  -webkit-clip-path: polygon(41% 0.7%, 59% 66%, 32% 22%);
-      //  background-color: #111;
-      //  @include ts(.5s .12s cubic-bezier(0.7, 0.3, 0, 1));
-      //}
-      //
-      //&:nth-of-type(3) .shard {
-      //  -webkit-clip-path: polygon(34% 69%, 80% 88.5%, 22.3% 41.7%);
-      //  background-color: #111;
-      //  @include ts(.5s .24s cubic-bezier(0.7, 0.3, 0, 1));
-      //}
-      //&:nth-of-type(4) .shard {
-      //  -webkit-clip-path: polygon(37.5% 71.1%, 81.5% 90%, 85% 100%);
-      //  background-color: #111;
-      //  @include ts(.5s .35s cubic-bezier(0.7, 0.3, 0, 1));
-      //}
-      //&:nth-of-type(5) .shard {
-      //  -webkit-clip-path: polygon(21.5% 47.5%, 16% 89.5%, 0% 100%);
-      //  background-color: #111;
-      //  @include ts(.5s .45s cubic-bezier(0.7, 0.3, 0, 1));
-      //}
-      //&:nth-of-type(6) .shard {
-      //  -webkit-clip-path: polygon(22.3% 47.5%, 30% 69%, 17% 88%);
-      //  background-color: #111;
-      //  @include ts(.5s .77s cubic-bezier(0.7, 0.3, 0, 1));
-      //}
-    }
-  }
-}
+      aside {
+        flex: 1;
+        z-index: 5;
+        padding: 50px;
+        margin-top: 150px;
+        opacity: 0;
+      }
 
-.stage-1 {
-  .shard-wrap {
-    // First piece, top left
-    &:first-of-type .shard {
-      -webkit-clip-path: polygon(41% 0.7%, 36.5% 11%, 48% 25%);
-      background-color: #111;
-      @include ts(.5s cubic-bezier(0.7, 0.3, 0, 1));
-    }
+      .hidden-figure {
+        flex: 1;
+        background: transparent;
+        background-size: 100% auto;
 
-    &:nth-of-type(2) .shard {
-      -webkit-clip-path: polygon(48% 25%, 36.5% 11%, 32% 22%);
-      background-color: #111;
-      @include ts(.5s .05s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-
-    &:nth-of-type(3) .shard {
-      -webkit-clip-path: polygon(32% 22%, 48% 25%, 51.85% 55%);
-      background-color: #111;
-      @include ts(.5s .11s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(4) .shard {
-      -webkit-clip-path: polygon(48% 25%, 51.85% 55%, 59% 66%);
-      background-color: #111;
-      @include ts(.5s .17s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-
-    // Second piece, top right
-    &:nth-of-type(5) .shard {
-      -webkit-clip-path: polygon(42% 0%, 66.35% 55.6%, 55% 48%);
-      background-color: #111;
-      @include ts(.5s .22s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(6) .shard {
-      -webkit-clip-path: polygon(55% 48%, 60% 68%, 66.35% 55.6%);
-      background-color: #111;
-      @include ts(.5s .25s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(7) .shard {
-      -webkit-clip-path: polygon(66.35% 55.6%, 60% 68%, 70.5% 65.25%);
-      background-color: #111;
-      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(8) .shard {
-      -webkit-clip-path: polygon(60% 68%, 70.5% 65.25%, 78% 82%);
-      background-color: #111;
-      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-
-    // Third piece, middle left
-    &:nth-of-type(9) .shard {
-      -webkit-clip-path: polygon(22.3% 41.7%, 35.8% 54%, 30% 60%);
-      background-color: #111;
-      @include ts(.5s .36s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(10) .shard {
-      -webkit-clip-path: polygon(30% 60%, 35.8% 54%, 34% 69%);
-      background-color: #111;
-      @include ts(.5s .40s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(11) .shard {
-      -webkit-clip-path: polygon(34% 69%, 54% 69%, 35.8% 54%);
-      background-color: #111;
-      @include ts(.5s .42s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(12) .shard {
-      -webkit-clip-path: polygon(34% 69%, 54% 69%, 80% 88.5%);
-      background-color: #111;
-      @include ts(.5s .45s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-
-    // Fourth piece, middle right
-    &:nth-of-type(13) .shard {
-      -webkit-clip-path: polygon(37.5% 71.1%, 65% 82.5%, 49% 78.5%);
-      background-color: #111;
-      @include ts(.5s .47s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(14) .shard {
-      -webkit-clip-path: polygon(49% 78.5%, 65% 82.5%, 75% 94.5%);
-      background-color: #111;
-      @include ts(.5s .4s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(15) .shard {
-      -webkit-clip-path: polygon(65% 82.5%, 75% 94.5%, 81.5% 90%);
-      background-color: #111;
-      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(16) .shard {
-      -webkit-clip-path: polygon(75% 94.5%, 81.5% 90%, 85% 100%);
-      background-color: #111;
-      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-
-    // Fifth piece, Bottom left
-    &:nth-of-type(17) .shard {
-      -webkit-clip-path: polygon(21.5% 47.5%, 19% 65%, 13.5% 68.8%);
-      background-color: #111;
-      @include ts(.5s .22s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(18) .shard {
-      -webkit-clip-path: polygon(13.5% 68.8%, 19% 65%, 16% 89.5%);
-      background-color: #111;
-      @include ts(.5s .25s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(19) .shard {
-      -webkit-clip-path: polygon(13.5% 68.8%, 16% 89.5%, 7% 84.5%);
-      background-color: #111;
-      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(20) .shard {
-      -webkit-clip-path: polygon(0% 100%, 7% 84.5%, 16% 89.5%);
-      background-color: #111;
-      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-
-    // Final piece, Bottom right
-    &:nth-of-type(21) .shard {
-      -webkit-clip-path: polygon(22.3% 47.5%, 30% 69%, 20% 65%);
-      background-color: #111;
-      @include ts(.5s .22s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(22) .shard {
-      -webkit-clip-path: polygon(20% 65%, 30% 69%, 26% 75%);
-      background-color: #111;
-      @include ts(.5s .25s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(23) .shard {
-      -webkit-clip-path: polygon(20% 65%, 26% 75%, 18.3% 79%);
-      background-color: #111;
-      @include ts(.5s .3s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-    &:nth-of-type(24) .shard {
-      -webkit-clip-path: polygon(18.3% 79%, 17% 88%, 26% 75%);
-      background-color: #111;
-      @include ts(.5s .33s cubic-bezier(0.7, 0.3, 0, 1));
-    }
-
-    @for $i from 1 through 24 {
-      &:nth-of-type(#{$i}) .shard {
-        @include ts(.45s $i * 0.018s cubic-bezier(0.7, 0.3, 0, 1));
-        
         &:before {
-          -webkit-animation-delay: $i * 0.038s;
-          -moz-animation-delay: $i * 0.038s;
-          -o-animation-delay: $i * 0.038s;
-          animation-delay: $i * 0.038s;
+          content: ' ';
+          display: block;
+          padding-bottom: 100%;
+        }
+      }
+
+      &.entered {
+        aside {
+          opacity: 1;
+
+          .row:first-of-type {
+            @include am(fadeInLeft .5s .15s backwards);
+          }
+          .row:last-of-type {
+            @include am(fadeInLeft .75s .52s backwards);
+          }
+        }
+      }
+    }
+
+    #personal-pages {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 100px;
+
+      .device {
+        flex: 1;
+        background: url("../../images/ios/Section3Device.png") no-repeat 0% 0%;
+        padding: 71px;
+        opacity: 0;
+        z-index: 5;
+
+        &:before {
+          content: ' ';
+          display: block;
+          padding-bottom: calc(#{percentage(730/411)} + 38%);
+        }
+      }
+
+      .screen {
+        flex: 1;
+        margin: 10px;
+        box-shadow: 0 1px 25px 2px rgba(#000, 0.5);
+        opacity: 0;
+        z-index: 5;
+
+        &:before {
+          content: ' ';
+          display: block;
+          padding-bottom: percentage(500/281);
+        }
+      }
+
+      @for $i from 2 through 5 {
+        .screen:nth-of-type(#{$i}) {
+          background: url("../../images/ios/Section3Screen#{$i - 1}.png") no-repeat 0% 0%;
+        }
+      }
+
+      .row {
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        opacity: 0;
+      }
+
+      &.entered {
+        .device {
+          opacity: 1;
+          @include am(fadeInLeft .65s .15s backwards);
+        }
+
+        .screen {
+          opacity: 1;
+          @include am(fadeInUp .85s .3s backwards);
+        }
+
+        @for $i from 2 through 5 {
+          .screen:nth-of-type(#{$i}) {
+            animation-delay: #{$i * 0.215}s;
+          }
+        }
+
+        .row {
+          opacity: 1;
+          @include am(fadeInDown .5s .8s backwards);
+        }
+      }
+    }
+
+    // Watch Online: Section 4
+    #watch-online {
+      background: url("../../images/ios/Section4BG.png") no-repeat 0% 0%;
+      background-size: 100% auto;
+      margin-top: -80px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+
+      &:before {
+        content: ' ';
+        display: block;
+        padding-bottom: percentage(771/1100);
+      }
+
+      .box {
+        flex: 1;
+      }
+
+      .left {
+        padding: 20px 80px;
+        max-width: 33.5%;
+
+        .vertical {
+          opacity: 0;
+          background: url("../../images/ios/Section4VerticalDevice.png") no-repeat 0% 0%;
+
+          &:before {
+            content: ' ';
+            display: block;
+            padding-bottom: percentage(817/391);
+          }
+        }
+      }
+
+      .right {
+        max-width: 45%;
+        
+        .text {
+          padding: 80px 10px;
+          opacity: 0;
+        }
+
+        .horizontal {
+          background: url("../../images/ios/Section4HorizontalDevice.png") no-repeat 0% 0%;
+          opacity: 0;
+
+          &:before {
+            content: ' ';
+            display: block;
+            padding-bottom: percentage(391/817);
+          }
+        }
+      }
+
+      &.entered {
+        .vertical {
+          opacity: 1;
+          @include am(fadeInDown .85s .91s backwards);
+        }
+
+        .horizontal {
+          opacity: 1;
+          @include am(fadeInUp .6s .25s backwards);
+        }
+
+        .text {
+          opacity: 1;
+          @include am(fadeInRight .75s .55s backwards);
+        }
+      }
+    }
+
+    // Communicate: Section 5
+    #communicate {
+      background: url("../../images/ios/Section5BG.png") no-repeat 0% 0%;
+      background-size: 100% auto;
+      margin-top: -80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      &:before {
+        content: ' ';
+        display: block;
+        padding-bottom: percentage(771/1100);
+      }
+
+      .box {
+        flex: 1;
+      }
+
+      .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+      }
+
+      .screen {
+        flex: 1;
+        margin: -150px;
+        opacity: 0;
+
+        &:before {
+          content: ' ';
+          display: block;
+          padding-bottom: percentage(632/515);
+        }
+      }
+
+      @for $i from 1 through 4 {
+        .screen:nth-of-type(#{$i}) {
+          background: url("../../images/ios/Section5Screen#{abs(5 - $i)}.png") no-repeat 0% 0%;
+        }
+      }
+
+      .right {
+        padding: 20px;
+      }
+
+      .row {
+        margin: 10px;
+        opacity: 0;
+      }
+
+      &.entered {
+        .screen {
+          opacity: 1;
+          @include am(fadeInLeft .55s .15s backwards);
+        }
+
+        @for $i from 1 through 4 {
+          .screen:nth-of-type(#{$i}) {
+            animation-delay: #{$i * 0.155}s;
+          }
+        }
+
+        .row {
+          opacity: 1;
+        }
+
+        .row:first-of-type {
+          @include am(fadeInRight .65s .55s backwards);
+        }
+
+        .row:nth-of-type(2) {
+          @include am(fadeInUp .67s .96s backwards);
+        }
+
+        .row:last-of-type {
+          @include am(fadeInUp .66s 1.2s backwards);
+        }
+      }
+    }
+
+    // Download: Section 6
+    #download {
+      background: #FFAD2D;
+      color: #555;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+
+      &:before, &:after {
+        content: ' ';
+        display: block;
+        background: #FFAD2D;
+        position: absolute;
+        height: 180px;
+        width: 110%;
+        left: -5%;
+        z-index: -1;
+      }
+
+      &:before {
+        top: -85px;
+        transform: rotate(5deg);
+      }
+
+      &:after {
+        bottom: -65px;
+        transform: rotate(-4deg);
+      }
+
+      .row {
+        flex: 1;
+        margin: 30px 0;
+        opacity: 0;
+      }
+
+      .heading {
+        h1 {
+          color: #111;
+          font-weight: lighter;
+          font-size: 5.5em;
+          letter-spacing: 10px;
+        }
+        h3 {
+          color: #BE0B2B;
+          font-size: 3em;
+          font-weight: 300;
+          letter-spacing: 4px;
+        }
+      }
+
+      .caption {
+        h4 {
+          margin-bottom: 50px;
+          margin-top: -25px;
+          font-size: 2.2em;
+          font-weight: 400;
+        }
+      }
+
+      .qr-code {
+        max-width: 280px;
+        cursor: pointer;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .thanks {
+        h4 {
+          font-size: 1.5em;
+        }
+      }
+
+      &.entered {
+        @for $i from 1 through 4 {
+          .row:nth-of-type(#{$i}) {
+            opacity: 1;
+            @include am(fadeInUp .65s backwards);
+            animation-delay: #{$i * 0.1435}s;
+          }
+        }
+      }
+    }
+
+    // Footer: Last section
+    footer {
+      padding-top: 150px !important;
+      padding-bottom: 25px !important;
+      text-align: center;
+
+      .copyright {
+        h2 {
+          font-size: 3.2em;
+          font-weight: lighter;
         }
       }
     }
   }
+
+  .app-store {
+    display: inline-block;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .app-store-badge {
+    background: url("../../images/app_store_badge.svg") no-repeat left top;
+    background-size: 100% auto !important;
+    display: block;
+    margin: -20px;
+    min-width: 135px;
+    min-height: 40px;
+    width: 180px;
+    height: 55px;
+  }
+
 }
 
-.intro {
-  .logo-canvas {
-    //-webkit-transform: rotate(36000deg);
-    //-moz-transform: rotate(36000deg);
-    //-ms-transform: rotate(36000deg);
-    //-o-transform: rotate(36000deg);
-    //transform: rotate(36000deg);
-    .shard-wrap {
-      &:first-of-type .shard {
-        -webkit-clip-path: polygon(21.5% 70.5%, 12% 85.5%, 8% 80%) !important;
-        background-color: #483448 !important;
-      }
-
-      &:nth-of-type(2) .shard {
-        -webkit-clip-path: polygon(22.8% 24.714%, 18.3% 27.714%, 13.6% 24%) !important;
-        background-color: #e33 !important;
-      }
-
-      &:nth-of-type(3) .shard {
-        -webkit-clip-path: polygon(8.5% 55%, 8% 57.286%, 11.7% 55.429%) !important;
-        background-color: greenyellow !important;
-      }
-      &:nth-of-type(4) .shard {
-        -webkit-clip-path: polygon(65% 88%, 52.5% 87.5%, 46% 80%) !important;
-        background-color: darkblue !important;
-      }
-      &:nth-of-type(5) .shard {
-        -webkit-clip-path: polygon(48.5% 2.571%, 49.4% 5.571%, 50% 2.714%) !important;
-        background-color: #eee !important;
-      }
-      &:nth-of-type(6) .shard {
-        -webkit-clip-path: polygon(70.5% 11.429%, 71.3% 8.571%, 73.1% 9.571%) !important;
-        background-color: #302035 !important;
-      }
-    }
-  }
-}
-
-.smash {
-  .rotator {
-    -webkit-transform: rotate(36000deg);
-    -moz-transform: rotate(36000deg);
-    -ms-transform: rotate(36000deg);
-    -o-transform: rotate(36000deg);
-    transform: rotate(36000deg);
-  }
-  .logo-canvas {
-    -webkit-transform: scale3d(700,700,1);
-    -moz-transform: scale3d(700,700,1);
-    -ms-transform: scale3d(700,700,1);
-    -o-transform: scale3d(700,700,1);
-    transform: scale3d(700,700,1);
-  }
-  .shard-wrap {
-
-    &:nth-of-type(n) .shard {
-      @include ts(.45s .0165s cubic-bezier(0.65, 0.2, 0.1, 1.05) !important);
-    }
-
-      &:nth-child(1) {
-        .shard {
-          -webkit-clip-path: polygon( 23.200% 21.571% ,21.700% 17.714% ,20.200% 19.857% ) !important;
-        }
-      }
-      &:nth-child(2) {
-        .shard {
-          -webkit-clip-path: polygon( 18.800% 25.714% ,16.300% 22.714% ,15.600% 24.000% ) !important;
-        }
-      }
-      &:nth-child(3) {
-        .shard {
-          -webkit-clip-path: polygon(91% 60%, 87.5% 61.5%, 85% 60%) !important;
-        }
-      }
-      &:nth-child(4) {
-        .shard {
-          -webkit-clip-path: polygon(10% 30%, 11% 32%, 12% 31%) !important;
-        }
-      }
-      &:nth-child(5) {
-        .shard {
-          -webkit-clip-path: polygon(70% 90%, 71% 92%, 72% 91%) !important;
-        }
-      }
-      &:nth-child(6) {
-        .shard {
-          -webkit-clip-path: polygon(80% 70%, 81% 73%, 82% 71%) !important;
-        }
-      }
-      &:nth-child(7) {
-        .shard {
-          -webkit-clip-path: polygon( 8.500% 55.000% ,8.000% 57.286% ,11.700% 55.429% ) !important;
-        }
-      }
-      &:nth-child(8) {
-        .shard {
-          -webkit-clip-path: polygon( 15.100% 63.857% ,15.500% 65.714% ,18.100% 63.857% ) !important;
-        }
-      }
-      &:nth-child(9) {
-        .shard {
-          -webkit-clip-path: polygon( 18.800% 78.000% ,15.800% 79.143% ,17.300% 80.714% ) !important;
-        }
-      }
-      &:nth-child(10) {
-        .shard {
-          -webkit-clip-path: polygon(85% 78%, 84.5% 80.5%, 86% 80%) !important;
-        }
-      }
-      &:nth-child(11) {
-        .shard {
-          -webkit-clip-path: polygon( 39.300% 17.143% ,38.700% 13.000% ,36.900% 15.571% ) !important;
-        }
-      }
-      &:nth-child(12) {
-        .shard {
-          -webkit-clip-path: polygon( 32.100% 82.000% ,34.100% 84.429% ,35.500% 79.714% ) !important;
-        }
-      }
-      &:nth-child(13) {
-        .shard {
-          -webkit-clip-path: polygon( 48.500% 2.571% ,49.400% 5.571% ,50.000% 2.714% ) !important;
-        }
-      }
-      &:nth-child(14) {
-        .shard {
-          -webkit-clip-path: polygon(50% 93%, 51% 95%, 52% 94%) !important;
-        }
-      }
-      &:nth-child(15) {
-        .shard {
-          -webkit-clip-path: polygon( 60.300% 8.000% ,62.300% 5.571% ,60.900% 3.857% ) !important;
-        }
-      }
-      &:nth-child(16) {
-        .shard {
-          -webkit-clip-path: polygon( 59.900% 92.714% ,60.400% 98.286% ,63.600% 96.714% ) !important;
-        }
-      }
-      &:nth-child(17) {
-        .shard {
-          -webkit-clip-path: polygon( 70.500% 11.429% ,71.300% 8.571% ,73.100% 9.571% ) !important;
-        }
-      }
-      &:nth-child(18) {
-        .shard {
-          -webkit-clip-path: polygon( 18.500% 42.286% ,15.200% 40.286% ,15.900% 42.857% ) !important;
-        }
-      }
-      &:nth-child(19) {
-        .shard {
-          -webkit-clip-path: polygon( 73.500% 16.857% ,76.300% 14.857% ,74.400% 12.429% ) !important;
-        }
-      }
-      &:nth-child(20) {
-        .shard {
-          -webkit-clip-path: polygon(80% 90%, 81% 92%, 82% 91%) !important;
-        }
-      }
-
-      &:nth-child(21) {
-        .shard {
-          -webkit-clip-path: polygon( 73.300% 28.429% ,75.500% 26.714% ,74.800% 25.857% ) !important;
-        }
-      }
-      &:nth-child(22) {
-        .shard {
-          -webkit-clip-path: polygon(85% 25%, 86% 27%, 87% 26%) !important;
-        }
-      }
-
-      &:nth-child(23) {
-        .shard {
-          -webkit-clip-path: polygon( 79.600% 33.571% ,82.800% 32.714% ,81.800% 30.000% ) !important;
-        }
-      }
-      &:nth-child(24) {
-        .shard {
-          -webkit-clip-path: polygon( 86.900% 42.643% ,90.500% 42.929% ,89.800% 39.786% ) !important;
-        }
-      }
-      &:nth-child(25) {
-        .shard {
-          -webkit-clip-path: polygon(80% 50%, 80.5% 50.5%, 81% 50%) !important;
-        }
-      }
-      &:nth-child(26) {
-        .shard {
-          -webkit-clip-path: polygon(84.5% 60%, 83% 62%, 81% 61%) !important;
-        }
-      }
-      &:nth-child(27) {
-        .shard {
-          -webkit-clip-path: polygon( 84.100% 67.857% ,85.500% 68.714% ,85.300% 67.286% ) !important;
-        }
-      }
-      &:nth-child(28) {
-        .shard {
-          -webkit-clip-path: polygon(80% 70%, 81% 73%, 82% 71%) !important;
-        }
-      }
-      &:nth-child(29) {
-        .shard {
-          -webkit-clip-path: polygon(85% 80%, 85.5% 80.5%, 86% 80%) !important;
-        }
-      }
-      &:nth-child(30) {
-        .shard {
-          -webkit-clip-path: polygon( 76.600% 81.214% ,78.000% 84.786% ,78.400% 83.500% ) !important;
-        }
-      }
-  }
-}
-
-.reset {
-  .logo-canvas {
-    @include ts(all ease-in-out .2s);
-  }
-}
-
-.shimmer {
-  .shard:before {
-    @include animation(0.98s 0.17s shimmer forwards);
-  }
-}
-
-@keyframes shimmer {
+@keyframes fadeInUp {
   0% {
-    background-color: rgba(255,255,255,0);
-  }
-  35% {
-    background-color: rgba(255,255,255,.1);
+    transform: translateY(50px);
+    opacity: 0;
   }
   100% {
-    background-color: rgba(255,255,255,0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-77px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// 1550 px
+@media screen and (max-width: 1550px) {
+  #enjoy-anywhere {
+    .hand-hold-device:after {
+      top: 5em !important;
+    }
+  }
+}
+
+// 1320 px
+@media screen and (max-width: 1320px) {
+  #enjoy-anywhere {
+    .hand-hold-device:after {
+      top: 4.5em !important;
+    }
+  }
+
+  #personal-pages {
+    .device {
+      padding: 60px !important;
+    }
+  }
+}
+
+// 1150 px
+@media screen and (max-width: 1150px) {
+  h1 {
+    font-size: 2.5em !important;
+  }
+  h3 {
+    font-size: 1.8em !important;
+  }
+
+  #banner {
+    .hero-heading {
+      font-size: 5.5em !important;
+    }
+    .heading-caption {
+      font-size: 4.5em !important;
+    }
+
+    .iPhone-inside {
+      bottom: 90px !important;
+      max-width: 130px !important;
+    }
+  }
+
+  #enjoy-anywhere {
+    .hand-hold-device:after {
+      top: 4em !important;
+    }
+  }
+
+  #personal-pages {
+    .device {
+      padding: 50px !important;
+    }
+  }
+
+  #watch-online {
+    .left {
+      max-width: 36.5% !important;
+    }
+  }
+}
+
+// 1000px
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 2.8em !important;
+  }
+  h2 {
+    font-size: 2.45em !important;
+  }
+  h3 {
+    font-size: 2em !important;
+  }
+  h4 {
+    font-size: 1.5em !important;
+  }
+
+  #banner {
+    .hero-heading {
+      font-size: 4em !important;
+      top: 0 !important;
+    }
+    .heading-caption {
+      font-size: 3.5em !important;
+      top: 1.5em !important;
+    }
+
+    .iPhone-inside {
+      bottom: 80px !important;
+      max-width: 90px !important;
+    }
+  }
+
+  #enjoy-anywhere {
+    .hand-hold-device:after {
+      top: 2.8em !important;
+    }
+  }
+
+  #personal-pages {
+    .device {
+      padding: 35px !important;
+    }
+  }
+
+  #watch-online {
+    .left {
+      max-width: 36.5% !important;
+    }
+    .right {
+      max-width: 45% !important;
+
+      .text {
+        padding: 45px 8px !important;
+      }
+    }
+  }
+}
+
+// 850 px
+@media screen and (max-width: 850px) {
+  #banner {
+    .hero-heading {
+      font-size: 4em !important;
+      top: 0 !important;
+    }
+    .heading-caption {
+      font-size: 3.5em !important;
+      top: 1.5em !important;
+    }
+
+    .iPhone-inside {
+      bottom: 80px !important;
+      max-width: 90px !important;
+    }
+  }
+
+  #enjoy-anywhere {
+    .hand-hold-device:after {
+      top: 2.8em !important;
+    }
+    aside {
+      margin-top: 20px !important;
+    }
+  }
+
+  #personal-pages {
+    .device {
+      padding: 35px !important;
+    }
+  }
+
+  #watch-online {
+    .left {
+      max-width: 36.5% !important;
+    }
+    .right {
+      max-width: 40% !important;
+
+      .text {
+        padding: 30px 5px !important;
+      }
+    }
+  }
+
+  #communicate {
+    .screen {
+      margin: -120px !important;
+    }
+  }
+
+  #download {
+    .qr-code {
+      max-width: 250px !important;
+    }
+  }
+}
+
+// 720px
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 1.65em !important;
+  }
+  h2 {
+    font-size: 1.45em !important;
+  }
+  h3 {
+    font-size: 1.25em !important;
+  }
+  h4 {
+    font-size: 1em !important;
+  }
+
+  .app-store-badge {
+    width: 135px !important;
+    height: 40px !important;
+  }
+
+  #banner {
+    .hero-heading {
+      font-size: 3.3em !important;
+      top: 0 !important;
+    }
+    .heading-caption {
+      font-size: 2.6em !important;
+      top: 1.45em !important;
+    }
+
+    .iPhone-inside {
+      bottom: 60px !important;
+      max-width: 70px !important;
+    }
+  }
+
+  #enjoy-anywhere {
+    margin-bottom: 10px !important;
+
+    .hand-hold-device:after {
+      top: 2.5em !important;
+    }
+    aside {
+      margin-top: 10px !important;
+    }
+  }
+
+  #personal-pages {
+    .device {
+      padding: 28px !important;
+    }
+
+    .row {
+      bottom: -35px !important;
+    }
+  }
+
+  #watch-online {
+    .left {
+      max-width: 31.5% !important;
+      padding: 20px 35px !important;
+    }
+
+    .right {
+      max-width: 35% !important;
+
+      .text {
+        padding: 20px 5px !important;
+      }
+    }
+  }
+
+  #communicate {
+    .screen {
+      margin: -100px !important;
+    }
+  }
+
+  #download {
+
+    &:before {
+      top: -35px !important;
+    }
+
+    &:after {
+      top: -30px !important;
+    }
+
+    .qr-code {
+      max-width: 220px !important;
+    }
+  }
+
+  .copyright {
+    h2 {
+      font-size: 2em !important;
+    }
   }
 }

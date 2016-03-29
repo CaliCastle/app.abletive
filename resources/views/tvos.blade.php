@@ -2,7 +2,20 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="keywords" content="Abletive, Ableton Live, Ableton, Abletive tvOS, Abletive客户端">
+    <meta name="description" content="Abletive官方iOS App, iPhone客户端正式上线!">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Abletive tvOS App">
+    <meta property="og:title" content="Abletive :: tvOS客户端">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:description" content="Abletive官方tvOS App, Apple TV客户端正式上线!">
+
     <title>Abletive :: tvOS客户端</title>
+
     <link rel="stylesheet" href="{{ url('css/tvos-app.css') }}">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="icon" href="favicon.png">
