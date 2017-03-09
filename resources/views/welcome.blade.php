@@ -3,8 +3,6 @@
     <head>
         <title>Abletive App</title>
 
-        <link href="http://fonts.useso.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
         <link rel="apple-touch-icon" href="favicon.png">
         <link rel="icon" href="favicon.png">
         <link rel="shortcut icon" href="favicon.png">
